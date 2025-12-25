@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is Today Second Saturday? - Bank Holiday Checker</title>
+  <meta name="description"
+    content="Instantly check if today is a Second Saturday. Banking holiday checker. Calculate 2nd & 4th Saturday bank holidays, co-parenting schedules, and shift patterns." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter Tight"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            background: '#0a0514', // Deep purple-black
+            surface: '#130d21', // Slightly lighter for cards
+            primary: '#10b981', // emerald-500
+            accent: '#22c55e', // Green accent
+          },
+          backgroundImage: {
+            'purple-glow': 'radial-gradient(circle at 50% 0%, #4c1d95 0%, #0a0514 60%)',
+            'light-aurora': 'radial-gradient(at 0% 0%, rgba(238, 242, 255, 1) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(253, 242, 248, 1) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(240, 253, 244, 1) 0px, transparent 50%), radial-gradient(at 0% 100%, rgba(245, 243, 255, 1) 0px, transparent 50%)',
+          },
+          boxShadow: {
+            'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+            'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+            'glow-green': '0 10px 40px -10px rgba(16, 185, 129, 0.3)',
+            'glow-red': '0 10px 40px -10px rgba(239, 68, 68, 0.3)',
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    /* Removed hardcoded body bg/color to allow Tailwind classes to work */
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5019551171853082"
+    crossorigin="anonymous"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P0C8KKP8VH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-P0C8KKP8VH');
+  </script>
+
+</head>
+
+<body
+  class="bg-slate-50 dark:bg-[#0a0514] text-slate-900 dark:text-white antialiased selection:bg-purple-500 selection:text-white overflow-x-hidden transition-colors duration-300">
+  <div id="root">
+    <div style="padding: 40px; text-align: center; font-family: sans-serif; max-width: 800px; margin: 0 auto;">
+      <header>
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Is Today Second Saturday? - Bank Holiday Checker</h1>
+        <p style="font-size: 1.2rem; color: #666;">
+          Instantly calculate if today is a Second or Fourth Saturday bank holiday.
+          The universal tool for tracking banking holidays, co-parenting schedules, and shift work patterns.
+        </p>
+      </header>
+
+      <main style="text-align: left; margin-top: 40px;">
+        <section style="margin-bottom: 40px;">
+          <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Saturday Bank Holiday Tracker</h2>
+          <p style="line-height: 1.6; margin-bottom: 1rem;">
+            Welcome to <strong>SaturdayTracker.com</strong>. In many regions, including under the 138 NI Act in India,
+            banks remain closed on the
+            <strong>Second and Fourth Saturdays</strong> of every month. The 1st, 3rd, and 5th Saturdays are generally
+            full working days.
+          </p>
+          <p style="line-height: 1.6;">
+            Our automated calculator allows you to:
+          </p>
+          <ul style="list-style-type: disc; margin-left: 20px; line-height: 1.6;">
+            <li>Verify upcoming bank holidays for the next 2 years.</li>
+            <li>Plan co-parenting schedules (e.g., alternating weekends or 2-2-3 schedules).</li>
+            <li>Track employee shift patterns that fall on specific Saturdays.</li>
+            <li>Download your custom schedule to Google Calendar or Outlook.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">How the 2nd & 4th Saturday Rule Works</h2>
+          <p style="line-height: 1.6; margin-bottom: 1rem;">
+            Since 2015, the Reserve Bank of India (RBI) and other financial institutions have standardized Saturday
+            holidays.
+            This rule helps streamline operations for public and private sector banks. However, if a month has five
+            Saturdays,
+            banks will be <strong>open</strong> on the 5th Saturday.
+          </p>
+          <p style="line-height: 1.6;">
+            Use the <strong>Universal Pattern Generator</strong> above (once loaded) to select any pattern (1st, 2nd,
+            3rd, 4th, or 5th Saturday)
+            and generate a complete list of dates for your specific needs.
+          </p>
+        </section>
+      </main>
+
+      <footer style="margin-top: 60px; font-size: 0.9rem; color: #888; border-top: 1px solid #ddd; padding-top: 20px;">
+        <p>&copy; 2025 SaturdayTracker.com. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

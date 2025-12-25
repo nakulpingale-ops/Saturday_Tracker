@@ -1,0 +1,5 @@
+{
+  "name": "Is Today Second Saturday?",
+  "description": "A minimalist tool to check if the current date is the second Saturday of the month, useful for banking and holiday schedules.",
+  "requestFramePermissions": []
+}
