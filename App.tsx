@@ -17,7 +17,7 @@ const App: React.FC = () => {
   // --- Calculator State ---
   const [calcSettings, setCalcSettings] = useState<CalculationSettings>({
     // FIX 1: Cast to 'any' to bypass strict Enum check from types.ts
-    pattern: '1st Saturday' as any,
+    pattern: 'Second & Fourth Saturday' as any,
     startDate: new Date().toISOString().split('T')[0], // YYYY-MM-DD
     durationYears: 1
   });
@@ -87,7 +87,7 @@ const App: React.FC = () => {
       // --- LOGIC UPDATE: Handle "2nd and 4th" vs Single Patterns ---
 
       // FIX 2: Cast 'settings.pattern' to string to allow comparison with new pattern text
-      if ((settings.pattern as string) === '2nd and 4th Saturday') {
+      if ((settings.pattern as string) === 'Second & Fourth Saturday') {
         // Handle Dual Pattern
         // Check 2nd Saturday (Index 1)
         if (saturdaysInMonth[1] && saturdaysInMonth[1] >= startDateObj && saturdaysInMonth[1] < endDateObj) {
@@ -100,11 +100,11 @@ const App: React.FC = () => {
       } else {
         // Handle Single Patterns (1st, 2nd, 3rd, 4th, 5th)
         const occurrenceMap: Record<string, number> = {
-          '1st Saturday': 1,
-          '2nd Saturday': 2,
-          '3rd Saturday': 3,
-          '4th Saturday': 4,
-          '5th Saturday': 5
+          'First Saturday': 1,
+          'Second Saturday': 2,
+          'Third Saturday': 3,
+          'Fourth Saturday': 4,
+          'Fifth Saturday': 5
         };
         // FIX 3: Cast to string for lookup
         const targetOccurrence = occurrenceMap[settings.pattern as string] || 1;
@@ -146,10 +146,7 @@ const App: React.FC = () => {
         {/* 1. The Hero (Top) */}
         <Hero isDarkMode={isDarkMode} />
 
-        {/* 2. The Calendar Grid */}
-        <UpcomingSchedule isDarkMode={isDarkMode} />
-
-        {/* 3. The Pattern Calculator Tool */}
+        {/* 2. The Pattern Calculator Tool */}
         <div className="w-full max-w-[1000px] mx-auto px-4 mb-[44px] space-y-8">
           <Calculator
             onCalculate={handleCalculate}
@@ -162,6 +159,11 @@ const App: React.FC = () => {
             results={calcResults}
             settings={calcSettings}
           />
+        </div>
+
+        {/* 3. The Calendar Grid */}
+        <div className="mt-[40px]">
+          <UpcomingSchedule isDarkMode={isDarkMode} />
         </div>
 
         {/* 4. Global Use Cases (Niche Cards) */}

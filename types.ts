@@ -1,10 +1,10 @@
 export enum SaturdayPattern {
-  First = "1st Saturday",
-  Second = "2nd Saturday",
-  Third = "3rd Saturday",
-  Fourth = "4th Saturday",
-  Fifth = "5th Saturday",
-  Both = "2nd and 4th Saturday"
+  First = "First Saturday",
+  Second = "Second Saturday",
+  Third = "Third Saturday",
+  Fourth = "Fourth Saturday",
+  Fifth = "Fifth Saturday",
+  Both = "Second & Fourth Saturday"
 }
 
 export interface CalculationSettings {

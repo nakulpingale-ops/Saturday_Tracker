@@ -8,7 +8,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
   return (
     <header className="w-full p-4 md:p-6 flex justify-between items-center z-50 relative">
-      <a href="#" className="flex items-center gap-2 group">
+      <a href="#" className="flex flex-col items-start gap-0.5 group">
 
         {/* LOGO IMAGE */}
         {/* Adjusted size: h-8 (mobile) to h-10 (desktop) so the text inside the image is readable */}
@@ -30,6 +30,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
             />
           )}
         </div>
+        <span className="text-[12px] text-slate-500 dark:text-slate-400 font-medium ml-[25px] md:ml-[34px]">a HolBank product</span>
       </a>
 
       {/* Theme Toggle Button - Now using SVGs so they are never invisible */}

@@ -140,12 +140,12 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
       </div>
 
       {/* Ad Placeholder - Desktop */}
-      <div className="hidden lg:flex w-[970px] h-[250px] bg-white dark:bg-[#130d21] border border-slate-100 dark:border-white/5 rounded-lg flex-col items-center justify-center text-slate-400 dark:text-gray-600 mb-10 transition-colors duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
+      <div className="hidden lg:flex w-[970px] h-[250px] bg-white dark:bg-[#130d21] border border-slate-100 dark:border-white/5 rounded-lg flex-col items-center justify-center text-slate-400 dark:text-gray-600 mb-[60px] transition-colors duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
         <span className="text-sm tracking-widest font-medium uppercase">Advertisement</span>
       </div>
 
       {/* Ad Placeholder - Mobile/Tablet */}
-      <div className="flex lg:hidden w-[300px] h-[250px] bg-white dark:bg-[#130d21] border border-slate-100 dark:border-white/5 rounded-lg flex-col items-center justify-center text-slate-400 dark:text-gray-600 mb-10 transition-colors duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
+      <div className="flex lg:hidden w-[300px] h-[250px] bg-white dark:bg-[#130d21] border border-slate-100 dark:border-white/5 rounded-lg flex-col items-center justify-center text-slate-400 dark:text-gray-600 mb-[60px] transition-colors duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
         <span className="text-sm tracking-widest font-medium uppercase">Advertisement</span>
       </div>
 
