@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { Share2 } from 'lucide-react';
 import { CalculationSettings } from '../types';
 import { getOrdinalSuffix } from '../utils/dateUtils';
 
@@ -123,9 +124,30 @@ const ResultsArea: React.FC<ResultsAreaProps> = ({ results, settings }) => {
           <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-6">Actions</h3>
 
           <div className="space-y-4">
+            {/* 1. SHARE Button - PRIMARY (Emerald) */}
+            <button
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({
+                    title: 'SaturdayTracker',
+                    text: 'Check if today is a 2nd or 4th Saturday!',
+                    url: window.location.href,
+                  }).catch(console.error);
+                } else {
+                  navigator.clipboard.writeText(window.location.href);
+                  alert('Link copied to clipboard!');
+                }
+              }}
+              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-6 rounded transition-all flex items-center justify-center space-x-3 shadow-lg shadow-emerald-500/20 active:scale-95 border-2 border-transparent hover:border-emerald-500"
+            >
+              <Share2 className="h-6 w-6 text-white" />
+              <span>Share Pattern/Schedule</span>
+            </button>
+
+            {/* 2. CALENDAR Buttons - SECONDARY (Slate) */}
             <button
               onClick={downloadICS}
-              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-6 rounded transition-all flex items-center justify-center space-x-3 shadow-lg shadow-emerald-500/20 dark:shadow-none active:scale-95"
+              className="w-full bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-200 font-bold py-4 px-6 rounded hover:bg-slate-200 dark:hover:bg-white/20 transition-all flex items-center justify-center space-x-3 active:scale-95 border-2 border-transparent hover:border-emerald-500"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -133,9 +155,10 @@ const ResultsArea: React.FC<ResultsAreaProps> = ({ results, settings }) => {
               <span>Add to Google Calendar / Outlook</span>
             </button>
 
+            {/* 3. DOWNLOAD Button - SECONDARY (Slate) */}
             <button
               onClick={downloadCSV}
-              className="w-full bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-200 font-bold py-4 px-6 rounded hover:bg-slate-200 dark:hover:bg-white/20 transition-all flex items-center justify-center space-x-3 active:scale-95"
+              className="w-full bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-200 font-bold py-4 px-6 rounded hover:bg-slate-200 dark:hover:bg-white/20 transition-all flex items-center justify-center space-x-3 active:scale-95 border-2 border-transparent hover:border-emerald-500"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

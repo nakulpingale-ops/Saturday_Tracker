@@ -3,6 +3,7 @@ import {
   checkIsSecondSaturday,
   checkIsFourthSaturday
 } from '../utils/dateUtils';
+import ContextCards from './ContextCards';
 
 interface HeroProps {
   isDarkMode: boolean;
@@ -122,20 +123,59 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
       {/* Status Bar */}
       <div className={`
         w-full max-w-[1000px] py-5 px-6 rounded
-        flex items-center justify-center gap-3
-        border transition-all duration-300 mb-6 backdrop-blur-sm
+        flex flex-row items-center justify-start md:justify-center gap-4 md:gap-4
+        border transition-all duration-300 mb-[14px] backdrop-blur-sm
         ${statusColorClass} ${statusBorderClass} ${shadowClass}
       `}>
-        <div className={`w-3 h-3 rounded-full ${indicatorColorClass} animate-pulse`}></div>
-        <span className="text-sm sm:text-lg font-bold tracking-wide uppercase">
-          {message}
+        <div className={`w-3 h-3 rounded-full ${indicatorColorClass} animate-pulse shrink-0`}></div>
+        <span className="text-sm sm:text-lg font-bold tracking-wide uppercase text-left md:text-center leading-tight">
+          {(() => {
+            if (isSecondSaturday) {
+              return (
+                <>
+                  YES. TODAY, {displayDate} IS A <span className="block md:inline">SECOND SATURDAY</span>
+                </>
+              );
+            } else if (isFourthSaturday) {
+              return (
+                <>
+                  YES. TODAY, {displayDate} IS A <span className="block md:inline">FOURTH SATURDAY</span>
+                </>
+              );
+            } else {
+              if (today.getDay() === 6) {
+                const day = today.getDate();
+                const weekNumber = Math.ceil(day / 7);
+                const ordinal = weekNumber === 1 ? "1ST" : weekNumber === 3 ? "3RD" : "5TH";
+                return (
+                  <>
+                    NO. TODAY, {displayDate} IS THE <span className="block md:inline">{ordinal} SATURDAY</span>
+                  </>
+                );
+              } else {
+                const currentWeekday = new Intl.DateTimeFormat('en-GB', { weekday: 'long' }).format(today).toUpperCase();
+                return (
+                  <>
+                    NO. TODAY, {displayDate} IS A <span className="block md:inline">{currentWeekday}</span>
+                  </>
+                );
+              }
+            }
+          })()}
         </span>
       </div>
 
+      {/* Context Cards - Real world implications */}
+      <ContextCards
+        date={today}
+        isSecondSaturday={isSecondSaturday}
+        isFourthSaturday={isFourthSaturday}
+      />
+
       {/* Upcoming Feature - Note removed, Logic updated */}
-      <div className="flex flex-col items-center justify-center mb-8 mt-[-10px] animate-fade-in font-sans gap-[3px] text-center">
+      <div className="flex flex-col items-center justify-center mb-8 mt-4 animate-fade-in font-sans gap-[3px] text-center">
         <div className="text-slate-500 dark:text-gray-400 text-sm font-normal">
-          {upcomingLabel} <span className="text-slate-900 dark:text-white font-medium">{upcomingDateString}</span>
+          {upcomingLabel} <span className="text-slate-900 dark:text-white font-medium block sm:inline mt-0.5 sm:mt-0">{upcomingDateString}</span>
         </div>
       </div>
 

@@ -99,7 +99,7 @@ const Calculator: React.FC<CalculatorProps> = ({ onCalculate, onReset, initialSe
             <button
               onClick={() => handlePresetClick('co-parenting')}
               className={`inline-flex items-center px-3 py-1.5 rounded text-[11px] font-semibold border transition-all duration-200 ${activePreset === 'co-parenting'
-                ? 'bg-purple-100 dark:bg-purple-900/30 border-purple-500 text-purple-700 dark:text-purple-300 opacity-100 ring-1 ring-purple-500/20'
+                ? 'bg-purple-100 dark:bg-purple-900/30 border-purple-500 text-purple-700 dark:text-purple-300 opacity-100'
                 : 'bg-slate-50 dark:bg-white/5 border-slate-200 dark:border-white/5 text-slate-600 dark:text-slate-300 opacity-60 hover:opacity-100 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer'
                 }`}
             >
@@ -109,7 +109,7 @@ const Calculator: React.FC<CalculatorProps> = ({ onCalculate, onReset, initialSe
             <button
               onClick={() => handlePresetClick('bank-holidays')}
               className={`inline-flex items-center px-3 py-1.5 rounded text-[11px] font-semibold border transition-all duration-200 ${activePreset === 'bank-holidays'
-                ? 'bg-purple-100 dark:bg-purple-900/30 border-purple-500 text-purple-700 dark:text-purple-300 opacity-100 ring-1 ring-purple-500/20'
+                ? 'bg-purple-100 dark:bg-purple-900/30 border-purple-500 text-purple-700 dark:text-purple-300 opacity-100'
                 : 'bg-slate-50 dark:bg-white/5 border-slate-200 dark:border-white/5 text-slate-600 dark:text-slate-300 opacity-60 hover:opacity-100 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer'
                 }`}
             >
@@ -119,7 +119,7 @@ const Calculator: React.FC<CalculatorProps> = ({ onCalculate, onReset, initialSe
             <button
               onClick={() => handlePresetClick('shift-work')}
               className={`inline-flex items-center px-3 py-1.5 rounded text-[11px] font-semibold border transition-all duration-200 ${activePreset === 'shift-work'
-                ? 'bg-purple-100 dark:bg-purple-900/30 border-purple-500 text-purple-700 dark:text-purple-300 opacity-100 ring-1 ring-purple-500/20'
+                ? 'bg-purple-100 dark:bg-purple-900/30 border-purple-500 text-purple-700 dark:text-purple-300 opacity-100'
                 : 'bg-slate-50 dark:bg-white/5 border-slate-200 dark:border-white/5 text-slate-600 dark:text-slate-300 opacity-60 hover:opacity-100 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer'
                 }`}
             >
@@ -129,7 +129,7 @@ const Calculator: React.FC<CalculatorProps> = ({ onCalculate, onReset, initialSe
             <button
               onClick={() => handlePresetClick('academy')}
               className={`inline-flex items-center px-3 py-1.5 rounded text-[11px] font-semibold border transition-all duration-200 ${activePreset === 'academy'
-                ? 'bg-purple-100 dark:bg-purple-900/30 border-purple-500 text-purple-700 dark:text-purple-300 opacity-100 ring-1 ring-purple-500/20'
+                ? 'bg-purple-100 dark:bg-purple-900/30 border-purple-500 text-purple-700 dark:text-purple-300 opacity-100'
                 : 'bg-slate-50 dark:bg-white/5 border-slate-200 dark:border-white/5 text-slate-600 dark:text-slate-300 opacity-60 hover:opacity-100 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer'
                 }`}
             >

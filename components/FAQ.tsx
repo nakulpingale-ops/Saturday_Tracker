@@ -10,7 +10,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded overflow-hidden mb-4 transition-all duration-300 shadow-xl shadow-gray-200/50 dark:shadow-none hover:shadow-lg">
+    <div className="bg-slate-50 dark:bg-slate-800/50 border border-gray-100 dark:border-white/10 hover:border-emerald-500/30 dark:hover:border-emerald-500/50 rounded overflow-hidden mb-4 transition-all duration-300 shadow-xl shadow-gray-200/50 dark:shadow-none hover:shadow-lg">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-5 px-6 flex items-center justify-between text-left focus:outline-none hover:bg-slate-50 dark:hover:bg-white/5 transition-colors relative z-10"
@@ -21,8 +21,8 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
             {question}
           </span>
         </div>
-        <div className={`bg-slate-50 dark:bg-white rounded-full p-0.5 transform transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}>
-          <ChevronDown className="w-3 h-3 text-slate-900 dark:text-black" />
+        <div className={`transform transition-transform duration-300 flex-shrink-0 text-slate-400 dark:text-slate-500 ${isOpen ? 'rotate-180' : ''}`}>
+          <ChevronDown className="w-5 h-5" />
         </div>
       </button>
       <div

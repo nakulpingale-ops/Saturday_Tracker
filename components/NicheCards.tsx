@@ -38,7 +38,7 @@ const NicheCards: React.FC = () => {
         {niches.map((niche, i) => (
           <div
             key={i}
-            className="group p-8 rounded bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-emerald-500/30 dark:hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10 dark:hover:shadow-none transition-all duration-300"
+            className="group p-8 rounded bg-slate-50 dark:bg-slate-800/50 border border-gray-100 dark:border-white/10 hover:border-emerald-500/30 dark:hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10 dark:hover:shadow-none transition-all duration-300"
           >
             <div className="bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-500 dark:text-emerald-400 w-16 h-16 rounded flex items-center justify-center mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
               {niche.icon}

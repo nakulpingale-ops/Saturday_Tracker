@@ -175,6 +175,14 @@ const App: React.FC = () => {
         {/* 6. The SEO Article */}
         <BankRulesArticle />
 
+        {/* 7. Huge HolBank Logo */}
+        <div className="w-full mx-auto px-4 py-12 md:py-24 flex flex-col items-center select-none opacity-90 hover:opacity-100 transition-opacity overflow-hidden">
+          <h1 className="text-[19.6vw] md:text-[553px] font-black tracking-tighter leading-[0.7] uppercase font-sans text-center">
+            <span className="font-light text-slate-300 dark:text-white">HOL</span>
+            <span className="text-[#7d3cff]">BANK</span>
+          </h1>
+        </div>
+
       </main>
 
       <Footer />

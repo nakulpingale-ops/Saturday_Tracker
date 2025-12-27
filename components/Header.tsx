@@ -29,8 +29,10 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
               className="h-5 md:h-7 w-auto object-contain transition-transform group-hover:scale-105"
             />
           )}
+
+
         </div>
-        <span className="text-[12px] text-slate-500 dark:text-slate-400 font-medium ml-[25px] md:ml-[34px]">a HolBank product</span>
+        <span className="text-[12px] text-slate-500 dark:text-slate-400 font-medium ml-[27px] md:ml-[36px]">a HolBank product</span>
       </a>
 
       {/* Theme Toggle Button - Now using SVGs so they are never invisible */}
