@@ -17,12 +17,12 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
   const isSecondSaturday = useMemo(() => checkIsSecondSaturday(today), [today]);
   const isFourthSaturday = useMemo(() => checkIsFourthSaturday(today), [today]);
 
-  // Format: 13 DEC 2025
+  // Format: 13 Dec 2025
   const displayDate = new Intl.DateTimeFormat('en-GB', {
     day: 'numeric',
     month: 'short',
     year: 'numeric'
-  }).format(today).toUpperCase();
+  }).format(today);
 
   // --- NEW LOGIC: Calculate the immediate next holiday (2nd or 4th) ---
   const getNextHoliday = () => {
@@ -123,40 +123,40 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
       {/* Status Bar */}
       <div className={`
         w-full max-w-[1000px] py-5 px-6 rounded
-        flex flex-row items-center justify-start md:justify-center gap-4 md:gap-4
+        flex flex-row items-center justify-start md:justify-center gap-4
         border transition-all duration-300 mb-[14px] backdrop-blur-sm
         ${statusColorClass} ${statusBorderClass} ${shadowClass}
       `}>
         <div className={`w-3 h-3 rounded-full ${indicatorColorClass} animate-pulse shrink-0`}></div>
-        <span className="text-sm sm:text-lg font-bold tracking-wide uppercase text-left md:text-center leading-tight">
+        <span className="text-sm sm:text-lg font-bold tracking-wide text-left md:text-center leading-tight">
           {(() => {
             if (isSecondSaturday) {
               return (
                 <>
-                  YES. TODAY, {displayDate} IS A <span className="block md:inline">SECOND SATURDAY</span>
+                  Yes. Today, {displayDate} is a <span className="block md:inline">Second Saturday</span>
                 </>
               );
             } else if (isFourthSaturday) {
               return (
                 <>
-                  YES. TODAY, {displayDate} IS A <span className="block md:inline">FOURTH SATURDAY</span>
+                  Yes. Today, {displayDate} is a <span className="block md:inline">Fourth Saturday</span>
                 </>
               );
             } else {
               if (today.getDay() === 6) {
                 const day = today.getDate();
                 const weekNumber = Math.ceil(day / 7);
-                const ordinal = weekNumber === 1 ? "1ST" : weekNumber === 3 ? "3RD" : "5TH";
+                const ordinal = weekNumber === 1 ? "1st" : weekNumber === 3 ? "3rd" : "5th";
                 return (
                   <>
-                    NO. TODAY, {displayDate} IS THE <span className="block md:inline">{ordinal} SATURDAY</span>
+                    No. Today, {displayDate} is the <span className="block md:inline">{ordinal} Saturday</span>
                   </>
                 );
               } else {
-                const currentWeekday = new Intl.DateTimeFormat('en-GB', { weekday: 'long' }).format(today).toUpperCase();
+                const currentWeekday = new Intl.DateTimeFormat('en-GB', { weekday: 'long' }).format(today);
                 return (
                   <>
-                    NO. TODAY, {displayDate} IS A <span className="block md:inline">{currentWeekday}</span>
+                    No. Today, {displayDate} is a <span className="block md:inline">{currentWeekday}</span>
                   </>
                 );
               }
