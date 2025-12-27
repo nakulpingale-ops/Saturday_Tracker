@@ -24,21 +24,27 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
     year: 'numeric'
   }).format(today);
 
-  // --- NEW LOGIC: Calculate the immediate next holiday (2nd or 4th) ---
-  const getNextHoliday = () => {
+  // --- NEW LOGIC: Calculate the immediate next Saturday (1st, 2nd, 3rd, 4th, or 5th) ---
+  const getNextSaturday = () => {
     let d = new Date(today);
     d.setDate(d.getDate() + 1); // Start checking from tomorrow
 
-    // Look ahead 60 days to find the next 2nd or 4th Saturday
-    for (let i = 0; i < 60; i++) {
-      const currentDay = d.getDay();
-      const currentDate = d.getDate();
-      const currentWeek = Math.ceil(currentDate / 7);
-
-      if (currentDay === 6 && (currentWeek === 2 || currentWeek === 4)) {
+    // Look ahead 7 days to find the next Saturday
+    for (let i = 0; i < 7; i++) {
+      if (d.getDay() === 6) { // Found a Saturday
+        const currentDate = d.getDate();
+        const currentWeek = Math.ceil(currentDate / 7);
+        let type = '';
+        switch (currentWeek) {
+          case 1: type = 'First'; break;
+          case 2: type = 'Second'; break;
+          case 3: type = 'Third'; break;
+          case 4: type = 'Fourth'; break;
+          default: type = 'Fifth'; break;
+        }
         return {
           date: new Date(d),
-          type: currentWeek === 2 ? 'Second' : 'Fourth'
+          type
         };
       }
       d.setDate(d.getDate() + 1);
@@ -46,20 +52,17 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
     return null;
   };
 
-  const nextHolidayObj = getNextHoliday();
+  const nextSatObj = getNextSaturday();
 
-  // Format Next Date: "27 December 2025" (Removed weekday to avoid repetition)
-  const upcomingDateString = nextHolidayObj
+  // Format Next Date: "03 Jan 2026"
+  const upcomingDateString = nextSatObj
     ? new Intl.DateTimeFormat('en-GB', {
-      day: 'numeric',
-      month: 'long',
+      day: '2-digit',
+      month: 'short',
       year: 'numeric'
-    }).format(nextHolidayObj.date)
+    }).format(nextSatObj.date)
     : "";
 
-  const upcomingLabel = nextHolidayObj
-    ? `The upcoming Saturday is a ${nextHolidayObj.type} Saturday:`
-    : "The upcoming Saturday is:";
   // ------------------------------------------------------------------
 
   // Logic Variables for Styling
@@ -175,7 +178,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
       {/* Upcoming Feature - Note removed, Logic updated */}
       <div className="flex flex-col items-center justify-center mb-8 mt-4 animate-fade-in font-sans gap-[3px] text-center">
         <div className="text-slate-500 dark:text-gray-400 text-sm font-normal">
-          {upcomingLabel} <span className="text-slate-900 dark:text-white font-medium block sm:inline mt-0.5 sm:mt-0">{upcomingDateString}</span>
+          The upcoming Saturday, <span className="text-slate-900 dark:text-white font-medium">{upcomingDateString}</span>, <span className="block sm:inline">is a <span className="text-slate-900 dark:text-white font-medium">{nextSatObj?.type} Saturday</span>.</span>
         </div>
       </div>
 
