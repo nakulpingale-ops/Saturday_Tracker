@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
 
 
         </div>
-        <span className="text-[12px] text-slate-500 dark:text-slate-400 font-medium ml-[27px] md:ml-[36px]">a HolBank product</span>
+        <span className="text-[12px] text-slate-500 dark:text-slate-400 font-medium ml-[27px] md:ml-[36px]">a HOLBANK product</span>
       </a>
 
       {/* Theme Toggle Button - Now using SVGs so they are never invisible */}

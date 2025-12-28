@@ -74,9 +74,11 @@ const FAQ: React.FC = () => {
 
   return (
     <section className="w-full max-w-[1000px] mx-auto px-4 mb-32 relative z-10">
-      <div className="flex items-center gap-3 mb-6 justify-center md:justify-start pl-2">
-        <HelpCircle className="w-8 h-8 text-slate-900 dark:text-white" />
-        <h3 className="text-3xl font-bold text-slate-900 dark:text-white uppercase tracking-tight transition-colors duration-300">
+      <div className="flex items-center mb-6 justify-start px-6">
+        <span className="bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-500 dark:text-emerald-400 p-2 rounded mr-3">
+          <HelpCircle className="w-5 h-5" />
+        </span>
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight transition-colors duration-300">
           FAQs
         </h3>
       </div>

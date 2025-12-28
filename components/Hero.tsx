@@ -126,23 +126,23 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
       {/* Status Bar */}
       <div className={`
         w-full max-w-[1000px] py-5 px-6 rounded
-        flex flex-row items-center justify-start md:justify-center gap-4
+        flex flex-row items-center justify-center gap-4
         border transition-all duration-300 mb-[14px] backdrop-blur-sm
         ${statusColorClass} ${statusBorderClass} ${shadowClass}
       `}>
         <div className={`w-3 h-3 rounded-full ${indicatorColorClass} animate-pulse shrink-0`}></div>
-        <span className="text-sm sm:text-lg font-bold tracking-wide text-left md:text-center leading-tight">
+        <span className="text-sm font-normal text-center leading-tight">
           {(() => {
             if (isSecondSaturday) {
               return (
                 <>
-                  Yes. Today, {displayDate} is a <span className="block md:inline">Second Saturday</span>
+                  Yes. Today, {displayDate} is a Second Saturday
                 </>
               );
             } else if (isFourthSaturday) {
               return (
                 <>
-                  Yes. Today, {displayDate} is a <span className="block md:inline">Fourth Saturday</span>
+                  Yes. Today, {displayDate} is a Fourth Saturday
                 </>
               );
             } else {
@@ -152,14 +152,14 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
                 const ordinal = weekNumber === 1 ? "1st" : weekNumber === 3 ? "3rd" : "5th";
                 return (
                   <>
-                    No. Today, {displayDate} is the <span className="block md:inline">{ordinal} Saturday</span>
+                    No. Today, {displayDate} is the {ordinal} Saturday
                   </>
                 );
               } else {
                 const currentWeekday = new Intl.DateTimeFormat('en-GB', { weekday: 'long' }).format(today);
                 return (
                   <>
-                    No. Today, {displayDate} is a <span className="block md:inline">{currentWeekday}</span>
+                    No. Today, {displayDate} is a {currentWeekday}
                   </>
                 );
               }
