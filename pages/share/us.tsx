@@ -97,9 +97,9 @@ const ShareUS: React.FC = () => {
         const shareUrl = window.location.href;
         let shareText = '';
         if (isMine) {
-            shareText = `saturdaytracker.com (a HOLBANK product): ${satInfo.formattedDate} — This weekend is MINE (my parenting schedule: ${scheduleLabel}). Details: ${shareUrl}`;
+            shareText = `saturdaytracker.com (a HOLBANK product): ${satInfo.formattedDate} — This upcoming weekend is MINE (my parenting schedule: ${scheduleLabel}). Details: ${shareUrl}`;
         } else {
-            shareText = `saturdaytracker.com (a HOLBANK product): ${satInfo.formattedDate} — This weekend is NOT mine (my parenting schedule: ${scheduleLabel}). Details: ${shareUrl}`;
+            shareText = `saturdaytracker.com (a HOLBANK product): ${satInfo.formattedDate} — This upcoming weekend is NOT mine (my parenting schedule: ${scheduleLabel}). Details: ${shareUrl}`;
         }
 
         await navigator.clipboard.writeText(shareText);
@@ -143,7 +143,7 @@ const ShareUS: React.FC = () => {
                             : 'bg-rose-50 dark:bg-rose-900/20 border border-rose-200 dark:border-rose-500/30'
                             }`}>
                             <h2 className={`text-2xl font-bold mb-2 ${isMine ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
-                                This weekend: {isMine ? 'MINE' : 'NOT MINE'}
+                                This upcoming weekend: {isMine ? 'MINE' : 'NOT MINE'}
                             </h2>
                             <p className="text-sm text-slate-600 dark:text-gray-400">
                                 My schedule: {scheduleLabel}

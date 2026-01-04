@@ -122,23 +122,14 @@ const HomePage: React.FC = () => {
 
             <main className="flex-grow flex flex-col w-full relative z-10">
 
+
+
                 {/* 1. The New Hero with Toggle */}
                 <HeroNew isDarkMode={isDarkMode} />
 
-                {/* 2. The Pattern Calculator Tool */}
-                <div className="w-full max-w-[1000px] mx-auto px-4 mb-[44px] space-y-8">
-                    <Calculator
-                        onCalculate={handleCalculate}
-                        onReset={handleReset}
-                        initialSettings={calcSettings}
-                    />
+                {/* Generator temporarily removed */}
 
-                    {/* Results Area */}
-                    <ResultsArea
-                        results={calcResults}
-                        settings={calcSettings}
-                    />
-                </div>
+
 
                 {/* 3. The Calendar Grid */}
                 <div className="mt-[40px]">

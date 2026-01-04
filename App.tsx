@@ -19,10 +19,17 @@ const App: React.FC = () => {
     // FIX 1: Cast to 'any' to bypass strict Enum check from types.ts
     pattern: 'Second & Fourth Saturday' as any,
     startDate: new Date().toISOString().split('T')[0], // YYYY-MM-DD
-    durationYears: 1
+    durationYears: 1,
+    mode: 'custody',
+    custodyPreset: '2-2-3',
+    custodyStartOwner: 'me',
+    durationMonths: 1
   });
 
   const [calcResults, setCalcResults] = useState<{ date: Date; occurrence: number }[]>([]);
+
+  // --- Custody State ---
+  const [custodyResults, setCustodyResults] = useState<any[]>([]); // Using any[] to avoid import cycle or duplicate definition if not imported
 
   // --- Theme Effects ---
   useEffect(() => {
@@ -50,9 +57,20 @@ const App: React.FC = () => {
   };
 
   // --- Calculation Logic (The "Brain") ---
-  const handleCalculate = (settings: CalculationSettings) => {
+  const handleCalculate = (settings: CalculationSettings, generatedCustodyResults?: any[]) => {
     setCalcSettings(settings); // Update state to reflect current choice
 
+    // Handling Custody Mode
+    if (settings.mode === 'custody') {
+      if (generatedCustodyResults) {
+        setCustodyResults(generatedCustodyResults);
+        setCalcResults([]); // Clear pattern results
+      }
+      return;
+    }
+
+    // Pattern Mode Logic (Legacy)
+    setCustodyResults([]); // Clear custody results
     const results: { date: Date; occurrence: number }[] = [];
 
     // Parse Date (YYYY-MM-DD)
@@ -131,6 +149,7 @@ const App: React.FC = () => {
 
   const handleReset = () => {
     setCalcResults([]); // Clear results on reset
+    setCustodyResults([]);
   };
 
   return (
@@ -144,23 +163,12 @@ const App: React.FC = () => {
       {/* Added top padding to prevent content overlap with fixed header, base height */}
       <main className="flex-grow flex flex-col w-full relative z-10 pt-0">
 
+
         {/* 1. The Hero (Top) */}
         <Hero isDarkMode={isDarkMode} />
 
-        {/* 2. The Pattern Calculator Tool */}
-        <div className="w-full max-w-[1000px] mx-auto px-4 mb-[64px] space-y-8">
-          <Calculator
-            onCalculate={handleCalculate}
-            onReset={handleReset}
-            initialSettings={calcSettings}
-          />
+        {/* Generator temporarily removed */}
 
-          {/* Results Area */}
-          <ResultsArea
-            results={calcResults}
-            settings={calcSettings}
-          />
-        </div>
 
         {/* 3. The Calendar Grid */}
         <div className="mt-[40px]">

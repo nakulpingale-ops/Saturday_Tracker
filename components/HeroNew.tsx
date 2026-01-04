@@ -230,10 +230,10 @@ const HeroNew: React.FC<HeroNewProps> = ({ isDarkMode }) => {
 
         let shareText = '';
         if (isNextWeekendMine) {
-            shareText = `saturdaytracker.com (a HOLBANK product): ${nextSat.formattedDate} — This weekend is MINE (my parenting schedule: ${scheduleLabel}). Details: ${shareUrl}`;
+            shareText = `saturdaytracker.com (a HOLBANK product): ${nextSat.formattedDate} — This upcoming weekend is MINE (my parenting schedule: ${scheduleLabel}). Details: ${shareUrl}`;
         } else {
             const nextRange = weekendRanges[0]?.rangeText || 'See calendar';
-            shareText = `saturdaytracker.com (a HOLBANK product): ${nextSat.formattedDate} — This weekend is NOT mine (my parenting schedule: ${scheduleLabel}). Next mine: ${nextRange}. Details: ${shareUrl}`;
+            shareText = `saturdaytracker.com (a HOLBANK product): ${nextSat.formattedDate} — This upcoming weekend is NOT mine (my parenting schedule: ${scheduleLabel}). Next mine: ${nextRange}. Details: ${shareUrl}`;
         }
 
         if (navigator.share) {
@@ -387,7 +387,7 @@ const HeroNew: React.FC<HeroNewProps> = ({ isDarkMode }) => {
                             : 'bg-rose-50 dark:bg-rose-900/20 border border-rose-200 dark:border-rose-500/30'
                             }`}>
                             <h3 className={`text-2xl font-bold mb-2 ${isNextWeekendMine ? 'text-emerald-700 dark:text-emerald-400' : 'text-rose-700 dark:text-rose-400'}`}>
-                                This weekend: {isNextWeekendMine ? 'MINE' : 'NOT MINE'}
+                                This upcoming weekend: {isNextWeekendMine ? 'MINE' : 'NOT MINE'}
                             </h3>
                             <p className="text-sm text-slate-600 dark:text-gray-400">
                                 Based on: {getScheduleLabel(scheduleType)}. Weekend starts {weekendStart === 'friday' ? 'Friday' : 'Saturday'}.

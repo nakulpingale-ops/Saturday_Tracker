@@ -36,11 +36,7 @@ const Footer = () => {
                     Alternating Weekends Calendar (Every Other Weekend)
                   </Link>
                 </li>
-                <li>
-                  <Link to="/us/2-2-3-parenting-schedule/" className="text-[13px] hover:text-white transition-colors duration-200 block">
-                    2-2-3 Parenting Time Schedule Calendar
-                  </Link>
-                </li>
+
                 <li>
                   <Link to="/us/how-to-count-weekends/" className="text-[13px] hover:text-white transition-colors duration-200 block">
                     How to Count Weekends (Friday vs Saturday Start)
@@ -116,11 +112,7 @@ const Footer = () => {
                     Are Banks Open on 1st / 3rd / 5th Saturday?
                   </Link>
                 </li>
-                <li>
-                  <Link to="/pattern-generator/" className="text-[13px] text-purple-300 hover:text-white transition-colors duration-200 block">
-                    Pattern Generator (Shifts & Custom Schedules)
-                  </Link>
-                </li>
+
                 <li className="sm:col-span-2">
                   <a
                     href="https://bankholidaycalendar.com/"
@@ -188,6 +180,7 @@ const Footer = () => {
                     Alternating Weekends Checker
                   </Link>
                 </li>
+
                 <li>
                   <Link to="/us/how-to-count-weekends/" className="text-[13px] hover:text-white transition-colors block">
                     How to Count Weekends
@@ -227,11 +220,7 @@ const Footer = () => {
                     Banks Open on 1st/3rd/5th Saturday?
                   </Link>
                 </li>
-                <li>
-                  <Link to="/pattern-generator/" className="text-[13px] hover:text-white transition-colors block">
-                    Pattern Generator
-                  </Link>
-                </li>
+
                 <li>
                   <a href="https://bankholidaycalendar.com/bank-holiday-calendar-2026" target="_blank" rel="noopener" className="text-[13px] hover:text-white transition-colors block">
                     Bank Holiday Calendar 2026

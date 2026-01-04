@@ -39,48 +39,66 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 const FAQ: React.FC = () => {
   const faqs = [
     {
-      question: "What does SaturdayTracker do?",
-      answer: "SaturdayTracker is a universal date calculator. It instantly generates schedules for 1st, 2nd, 3rd, 4th, and 5th Saturdays. It is used for Bank Holiday checking (2nd & 4th), Co-Parenting schedules, and Shift Work planning."
+      question: "Is today a second or fourth Saturday?",
+      answer: "SaturdayTracker counts the Saturdays in the current month and tells you whether today (or an upcoming Saturday) is the first, second, third, fourth, or fifth Saturday."
     },
     {
-      question: "How do I calculate custody / co-parenting weekends?",
-      answer: "Select the 'Co-Parenting' badge above. Most Standard Possession Orders (SPO) assign the 1st, 3rd, and 5th weekends to one parent, and the 2nd and 4th weekends to the other. Our tool instantly lists these dates for the entire year so you can plan ahead."
+      question: "Are banks closed on the second and fourth Saturday in India?",
+      answer: "In most cases, banks are closed on the second and fourth Saturday. However, local holidays or special notifications can change working hours—so confirm with your bank if it’s critical."
     },
     {
-      question: "Who gets the '5th Weekend' in a custody schedule?",
-      answer: "In a standard 1st/3rd/5th schedule, the parent who has the 1st and 3rd weekends typically gets the 5th weekend as well. This occurs about 4 times a year. Our calculator explicitly labels 'Fifth Saturdays' to help you avoid confusion."
+      question: "Are banks open on the first, third, and fifth Saturday?",
+      answer: "Generally yes, but state holidays and bank-specific working hours can vary. If it’s a time-sensitive visit, confirm with your branch."
     },
     {
-      question: "Are banks closed on Second and Fourth Saturdays?",
-      answer: "Yes, in many regions (including India/RBI rules), banks remain closed on both the Second and Fourth Saturdays of every month. They typically function on the First, Third, and Fifth Saturdays."
+      question: "How do I count which Saturday it is?",
+      answer: "Find the first Saturday of the month, then count forward by weeks. SaturdayTracker does this instantly for any date you select."
     },
     {
-      question: "How are Second and Fourth Saturdays calculated?",
-      answer: "A Second Saturday always falls between the 8th and 14th of the month. A Fourth Saturday always falls between the 22nd and 28th. Our algorithm calculates this mathematically for any year."
+      question: "Do U.S. custody schedules use ‘weekends’ or ‘Saturdays’?",
+      answer: "Most schedules reference ‘weekends,’ but the exact start (Friday vs Saturday) depends on the court order. SaturdayTracker supports weekend counting so you can match your order’s definition."
     },
     {
-      question: "Can I print or share these schedules?",
-      answer: "Yes. You can generate a list for the 'Next 1 Year' or 'Next 2 Years' using the dropdown menu, then copy the list to share with your co-parent, employer, or employees."
+      question: "What does ‘2nd/4th weekend visitation’ mean?",
+      answer: "It means parenting time happens on the second and fourth weekend of each month. Your order may specify pickup/drop-off times—use those times when applying the result."
     },
     {
-      question: "Does every month have a 5th Saturday?",
-      answer: "No. A 5th Saturday only occurs in months that have 29, 30, or 31 days AND start on a Friday or Saturday. These are effectively 'bonus' weekends for 1st/3rd/5th schedule holders."
+      question: "Can SaturdayTracker generate a calendar I can share?",
+      answer: "Yes—where available, you can share a link to the result so the other person sees the same weekend calculation."
     },
     {
-      question: "Is SaturdayTracker free to use?",
-      answer: "Yes, SaturdayTracker is a free tool designed to help you plan your schedule effectively."
+      question: "Can I add these dates to Google Calendar or Outlook?",
+      answer: "If the export option is enabled, you can download an ICS calendar file and import it into Google Calendar, Apple Calendar, or Outlook."
+    },
+    {
+      question: "What if a holiday overrides the schedule?",
+      answer: "Many custody orders include holiday priority rules and makeup time. SaturdayTracker helps with weekend counting, but always follow your holiday provisions."
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <section className="w-full max-w-[1000px] mx-auto px-4 mb-32 relative z-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="flex items-center mb-6 justify-start px-6">
         <span className="bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-500 dark:text-emerald-400 p-2 rounded mr-3">
           <HelpCircle className="w-5 h-5" />
         </span>
-        <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight transition-colors duration-300">
+        <h2 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight transition-colors duration-300">
           FAQs
-        </h3>
+        </h2>
       </div>
       <div className="flex flex-col">
         {faqs.map((faq, index) => (
@@ -94,5 +112,6 @@ const FAQ: React.FC = () => {
     </section>
   );
 };
+
 
 export default FAQ;

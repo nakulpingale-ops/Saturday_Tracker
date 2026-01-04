@@ -10,15 +10,15 @@ const PatternGenerator = () => {
             description="Generate custom calendars for complex working shifts."
         >
             <div className="text-center py-12">
-                <span className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-green-800 uppercase bg-green-100 rounded-full dark:bg-green-900 dark:text-green-200">
-                    Coming Soon
+                <span className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-amber-800 uppercase bg-amber-100 rounded-full dark:bg-amber-900 dark:text-amber-200">
+                    Temporarily Unavailable
                 </span>
                 <h2 className="text-2xl font-bold mb-4">Custom Pattern Tool</h2>
                 <p className="text-slate-600 dark:text-gray-300 max-w-xl mx-auto mb-8">
-                    Do you work a 4-on-4-off schedule? Or maybe you have a custom custody arrangement that doesn't fit the standard molds?
+                    We're currently updating the Custody Rotation Generator with improved features and functionality.
                 </p>
-                <p className="mb-8">
-                    Our universal Pattern Generator will allow you to input any repeating sequence and project it out for 2+ years.
+                <p className="mb-8 text-slate-500 dark:text-gray-400">
+                    Please check back soon. In the meantime, explore our other co-parenting tools and banking calendars.
                 </p>
 
                 <div className="mt-8">

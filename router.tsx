@@ -30,7 +30,7 @@ import IndiaRule from './pages/india/second-and-fourth-saturday-rule';
 import India2025List from './pages/india/second-and-fourth-saturdays-2025';
 import India2026List from './pages/india/second-and-fourth-saturdays-2026';
 import IndiaBanksOpenOthers from './pages/india/banks-open-first-third-fifth-saturday';
-import PatternGenerator from './pages/pattern-generator';
+import PatternGenerator from './pages/PatternGenerator';
 
 import ScrollToTop from './components/ScrollToTop';
 
