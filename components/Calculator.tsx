@@ -68,7 +68,7 @@ const Calculator: React.FC<CalculatorProps> = ({ onCalculate, onReset, initialSe
     <div>
 
       {/* --- HEADER SECTION START --- */}
-      <div className="mb-3 px-8">
+      <div className="mb-3 mt-[35px] px-8">
         <div className="flex justify-between items-start mb-3">
           <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100 flex items-center">
             <span className="bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-500 dark:text-emerald-400 p-2 rounded mr-3">

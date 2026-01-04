@@ -7,12 +7,23 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5013551171853082"
     crossorigin="anonymous"></script>
 
-  <title>SaturdayTracker | Custody, Shifts & Bank Holiday Calculator</title>
+  <title>SaturdayTracker – 2nd & 4th Saturday Bank Checker + Co-Parenting Weekend Calculator</title>
 
   <meta name="description"
-    content="The universal Saturday schedule planner. Instantly calculate co-parenting weekends, shift work patterns, and 2nd & 4th Saturday bank holidays." />
+    content="Check if India banks are open on Saturday and calculate US co-parenting custody weekends. Free 2nd & 4th Saturday checker for bank holidays and parenting schedules." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SaturdayTracker – Bank Checker + Co-Parenting Calculator" />
+  <meta property="og:description"
+    content="Check if India banks are open on Saturday and calculate US co-parenting custody weekends." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://saturdaytracker.com/" />
 
   <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="canonical" href="https://saturdaytracker.com/" />
+  <link rel="alternate" hreflang="en-US" href="https://saturdaytracker.com/" />
+  <link rel="alternate" hreflang="en-IN" href="https://saturdaytracker.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://saturdaytracker.com/" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,6 +62,17 @@
 
   <style>
     /* Removed hardcoded body bg/color to allow Tailwind classes to work */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
   </style>
 
   <script type="importmap">
@@ -82,7 +104,8 @@
   <div id="root">
     <div style="padding: 40px; text-align: center; font-family: sans-serif; max-width: 800px; margin: 0 auto;">
       <header>
-        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Is Today Second Saturday? - Bank Holiday Checker</h1>
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Saturday Tracker - Weekend Schedule & Bank Holiday
+          Calculator</h1>
         <p style="font-size: 1.2rem; color: #666;">
           Instantly calculate if today is a Second or Fourth Saturday bank holiday.
           The universal tool for tracking banking holidays, co-parenting schedules, and shift work patterns.
@@ -93,10 +116,11 @@
         <section style="margin-bottom: 40px;">
           <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Saturday Bank Holiday Tracker</h2>
           <p style="line-height: 1.6; margin-bottom: 1rem;">
-            Welcome to <strong>SaturdayTracker.com</strong>. In many regions, including under the 138 NI Act in India,
-            banks remain closed on the
-            <strong>Second and Fourth Saturdays</strong> of every month. The 1st, 3rd, and 5th Saturdays are generally
-            full working days.
+            Welcome to <strong>SaturdayTracker.com</strong>. Under a Government of India notification issued under
+            <strong>Section 25 of the Negotiable Instruments Act, 1881</strong>, effective September 1, 2015,
+            banks remain closed on the <strong>Second and Fourth Saturdays</strong> of every month.
+            The RBI has aligned payment systems accordingly (e.g., RTGS is not operated on 2nd/4th Saturdays).
+            The 1st, 3rd, and 5th Saturdays are generally full working days.
           </p>
           <p style="line-height: 1.6;">
             Our automated calculator allows you to:
@@ -110,25 +134,40 @@
           </ul>
         </section>
 
-        <section>
+        <section style="margin-bottom: 40px;">
           <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">How the 2nd & 4th Saturday Rule Works</h2>
           <p style="line-height: 1.6; margin-bottom: 1rem;">
             Since 2015, the Reserve Bank of India (RBI) and other financial institutions have standardized Saturday
-            holidays.
-            This rule helps streamline operations for public and private sector banks. However, if a month has five
-            Saturdays,
-            banks will be <strong>open</strong> on the 5th Saturday.
+            holidays. This rule helps streamline operations for public and private sector banks. However, if a month has
+            five
+            Saturdays, banks will be <strong>open</strong> on the 5th Saturday.
           </p>
           <p style="line-height: 1.6;">
-            Use the <strong>Universal Pattern Generator</strong> above (once loaded) to select any pattern (1st, 2nd,
-            3rd, 4th, or 5th Saturday)
-            and generate a complete list of dates for your specific needs.
+            Use the <strong>Universal Pattern Generator</strong> above to select any pattern (1st, 2nd,
+            3rd, 4th, or 5th Saturday) and generate a complete list of dates for your specific needs.
           </p>
         </section>
+
+        <section style="margin-bottom: 40px;">
+          <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">US Co-Parenting & Custody Schedules</h2>
+          <p style="line-height: 1.6; margin-bottom: 1rem;">
+            For parents in the United States following Standard Possession Orders (SPO), particularly in Texas and Utah,
+            custody schedules often rely on the specific count of the weekend. The non-custodial parent typically has
+            visitation on the 1st, 3rd, and 5th weekends, while the custodial parent retains possession on the 2nd and
+            4th weekends.
+          </p>
+        </section>
+
+        <aside
+          style="background: #fffbeb; border: 1px solid #fcd34d; border-radius: 8px; padding: 16px; margin-bottom: 40px;">
+          <p style="font-size: 0.9rem; color: #92400e; margin: 0;">
+            <strong>⚠️ Disclaimer:</strong> Informational only; confirm with your bank / court order.
+          </p>
+        </aside>
       </main>
 
       <footer style="margin-top: 60px; font-size: 0.9rem; color: #888; border-top: 1px solid #ddd; padding-top: 20px;">
-        <p>&copy; 2025 SaturdayTracker.com. All rights reserved.</p>
+        <p>&copy; 2026 SaturdayTracker.com. All rights reserved.</p>
       </footer>
     </div>
   </div>

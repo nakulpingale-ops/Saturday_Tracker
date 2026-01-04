@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
+import Hero from './components/HeroNew'; // Updated to use new Hero component
 import UpcomingSchedule from './components/UpcomingSchedule';
 import Calculator from './components/Calculator';
 import ResultsArea from './components/ResultsArea';
@@ -141,13 +141,14 @@ const App: React.FC = () => {
 
       <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
 
-      <main className="flex-grow flex flex-col w-full relative z-10">
+      {/* Added top padding to prevent content overlap with fixed header, base height */}
+      <main className="flex-grow flex flex-col w-full relative z-10 pt-0">
 
         {/* 1. The Hero (Top) */}
         <Hero isDarkMode={isDarkMode} />
 
         {/* 2. The Pattern Calculator Tool */}
-        <div className="w-full max-w-[1000px] mx-auto px-4 mb-[44px] space-y-8">
+        <div className="w-full max-w-[1000px] mx-auto px-4 mb-[64px] space-y-8">
           <Calculator
             onCalculate={handleCalculate}
             onReset={handleReset}
