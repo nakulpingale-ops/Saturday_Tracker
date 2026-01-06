@@ -293,6 +293,29 @@ const HeroNew: React.FC<HeroNewProps> = ({ isDarkMode }) => {
                 </span>
             </h1>
 
+            {/* Publisher Content for AdSense Quality */}
+            <div className="w-full max-w-3xl mx-auto mb-10 text-center">
+                <p className="text-[14px] text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+                    <strong>SaturdayTracker.com</strong> is the verified utility for tracking bank holidays in India and co-parenting weekend schedules in the USA.
+                    Whether you are planning a bank visit or organizing custody handovers, our tools provide instant, <br />
+                    accurate clarity on "Second and Fourth Saturday" patterns.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-600 dark:text-slate-400">
+                    <span className="flex items-center gap-1 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 px-3 py-1 rounded-full">
+                        <Check className="w-4 h-4 text-indigo-500" />
+                        US Standard Possession Orders
+                    </span>
+                    <span className="flex items-center gap-1 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 px-3 py-1 rounded-full">
+                        <Check className="w-4 h-4 text-indigo-500" />
+                        India Bank Holidays
+                    </span>
+                    <span className="flex items-center gap-1 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 px-3 py-1 rounded-full">
+                        <Check className="w-4 h-4 text-indigo-500" />
+                        Recurring Shift Patterns
+                    </span>
+                </div>
+            </div>
+
             {/* Side-by-Side Sections */}
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
 

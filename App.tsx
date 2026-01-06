@@ -8,6 +8,7 @@ import NicheCards from './components/NicheCards';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import BankRulesArticle from './components/BankRulesArticle';
+import Ads from './components/Ads';
 import { CalculationSettings } from './types';
 
 const App: React.FC = () => {
@@ -158,6 +159,7 @@ const App: React.FC = () => {
       {/* Top Purple Gradient Glow */}
       <div className="absolute top-0 left-0 w-full h-[1200px] bg-purple-glow opacity-0 dark:opacity-60 z-[-1] pointer-events-none transition-opacity duration-300 [mask-image:linear-gradient(to_bottom,black_40%,transparent_100%)]" />
 
+      <Ads />
       <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
 
       {/* Added top padding to prevent content overlap with fixed header, base height */}

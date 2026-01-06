@@ -151,11 +151,7 @@ const Footer = () => {
                     Bank Holiday Calendar
                   </a>
                 </li>
-                <li>
-                  <a href="https://bankholidaylist.com/" className="text-[13px] text-slate-600 hover:text-slate-400 transition-colors block cursor-default">
-                    Bank Holiday List (Coming Soon)
-                  </a>
-                </li>
+
                 <li>
                   <a href="#" className="text-[13px] text-slate-600 hover:text-slate-400 transition-colors block cursor-default">
                     Plan Long Weekends (WEEKODE)
